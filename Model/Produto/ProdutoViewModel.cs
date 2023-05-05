@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,13 @@ namespace Model.Produto
     [Table("TB_PRODUTO")]
     public class ProdutoViewModel
     {
+        [Column("PRD_ID")]
+        [Display(Name ="Código")]
         public int Id { get; set; }
+
+        [Column("PRD_NOME")]
+        [Display(Name = "Nomes")]
+        [MaxLength(250)]
         public string Nome { get; set; }
 
         
