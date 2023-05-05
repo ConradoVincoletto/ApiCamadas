@@ -1,8 +1,16 @@
+using Data.Config;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+
+builder.Services.AddDbContext<Context>
+    (options => options.UseSqlServer
+    ("Data Source=LAPTOP-MGPDKJRC\\SQLSERVER2022;Initial Catalog=API_TRES_CAMADAS;Integrated Security=True;Encrypt=False;TrustServerCertificate=False"));
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
