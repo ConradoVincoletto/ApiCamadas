@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Business.InterfaceProduto
 {
-    public class IProduto : IGeneric<ProdutoViewModel>
+    public interface IProduto : IGeneric<ProdutoViewModel>
     {
     }
 }
