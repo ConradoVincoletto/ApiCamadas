@@ -16,9 +16,27 @@ namespace Data.Config
         }
         public Context(DbContextOptions options) : base(options)
         {
-
+            Database.EnsureCreated();
         }
-        DbSet<ProdutoViewModel> Produtos { get; set; }
-        DbSet<CategoriaViewModel> Categorias { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer(GetStringConectionConfig());
+                base.OnConfiguring(optionsBuilder);
+            }
+        }
+
+        DbSet<ProdutoViewModel> ProdutoViewModels { get; set; }
+        DbSet<CategoriaViewModel> CategoriaViewModels { get; set; }
+
+        private string GetStringConectionConfig()
+        {
+            string strCon = "Data Source=LAPTOP-MGPDKJRC\\SQLSERVER2022;Initial Catalog=API_TRES_CAMADAS;Integrated Security=True;Encrypt=False;TrustServerCertificate=False"));
+            return strCon;
+        }
+
+        
     }
 }
