@@ -1,4 +1,8 @@
+using Business.InterfaceGenerica;
+using Business.InterfaceProduto;
 using Data.Config;
+using Data.ProdutoRepositorio;
+using Data.RepositorioGenerico;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +16,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddSingleton(typeof(IGeneric<>), typeof(RepositoryGeneric<>));
+builder.Services.AddSingleton<IProduto, RepositorioProduto>();
 
 var app = builder.Build();
 
