@@ -33,7 +33,7 @@ namespace Data.Config
 
         private string GetStringConectionConfig()
         {
-            string strCon = "Data Source=LAPTOP-MGPDKJRC\\SQLSERVER2022;Initial Catalog=API_TRES_CAMADAS;Integrated Security=True;Encrypt=False;TrustServerCertificate=False"));
+            string strCon = "Data Source=LAPTOP-MGPDKJRC\\SQLSERVER2022;Initial Catalog=API_TRES_CAMADAS;Integrated Security=True;Encrypt=False;TrustServerCertificate=False";
             return strCon;
         }
 
