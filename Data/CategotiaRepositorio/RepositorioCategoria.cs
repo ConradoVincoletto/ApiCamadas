@@ -1,4 +1,5 @@
-﻿using Data.Config;
+﻿using Business.InterfaceCategoria;
+using Data.Config;
 using Data.RepositorioGenerico;
 using Microsoft.EntityFrameworkCore;
 using Model.Categoria;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Data.CategotiaRepositorio
 {
-    public class RepositorioCategoria : RepositoryGeneric<CategoriaViewModel>
+    public class RepositorioCategoria : RepositoryGeneric<CategoriaViewModel>, ICategoria
     {
         private readonly DbContextOptions<Context> _OptionBuilder;
 

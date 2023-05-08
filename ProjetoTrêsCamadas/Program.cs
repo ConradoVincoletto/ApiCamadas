@@ -1,5 +1,7 @@
+using Business.InterfaceCategoria;
 using Business.InterfaceGenerica;
 using Business.InterfaceProduto;
+using Data.CategotiaRepositorio;
 using Data.Config;
 using Data.ProdutoRepositorio;
 using Data.RepositorioGenerico;
@@ -19,6 +21,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddSingleton(typeof(IGeneric<>), typeof(RepositoryGeneric<>));
 builder.Services.AddSingleton<IProduto, RepositorioProduto>();
+builder.Services.AddSingleton<ICategoria, RepositorioCategoria>();
 
 var app = builder.Build();
 
