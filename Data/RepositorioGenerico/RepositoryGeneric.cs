@@ -2,12 +2,7 @@
 using Data.Config;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Win32.SafeHandles;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Data.RepositorioGenerico
 {
@@ -16,7 +11,7 @@ namespace Data.RepositorioGenerico
         private readonly DbContextOptions<Context> _OptionBuilder;
         public RepositoryGeneric()
         {
-            _OptionBuilder= new DbContextOptions<Context>();
+            _OptionBuilder = new DbContextOptions<Context>();
         }
 
         public async Task Add(T Objeto)
